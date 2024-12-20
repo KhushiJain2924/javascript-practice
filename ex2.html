@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Variable</title>
+    <style>
+      button{
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <p>Cart Quantity</p>
+    <button onclick="
+      console.log(`Show Quantity: ${showQuantity}`);
+    ">Show Quantity</button>
+    <button onclick="
+      if(showQuantity>=10){
+        console.log('The cart is full');
+      }
+      else{
+        showQuantity += 1;
+        console.log(`Show Quantity: ${showQuantity}`);
+      }
+    ">Add to Cart</button>
+    <button onclick="
+     if(showQuantity>=10){
+        console.log('The cart is full');
+      }
+      else{
+        showQuantity += 2;
+      console.log(`Show Quantity: ${showQuantity}`);
+      }
+    ">+2</button>
+    <button onclick="
+     if(showQuantity>=10){
+        console.log('The cart is full');
+      }
+      else{
+        showQuantity += 3;
+      console.log(`Show Quantity: ${showQuantity}`);
+      }
+    ">+3</button>
+    <button onclick="
+     if(showQuantity>=10){
+        console.log('The cart is full');
+      }
+     else{
+      showQuantity += 4;
+      console.log(`Show Quantity: ${showQuantity}`);
+     }
+    ">+4</button>
+    <button onclick="
+     if(showQuantity>=10){
+        console.log('The cart is full');
+      }
+      else{
+        showQuantity += 5;
+      console.log(`Show Quantity: ${showQuantity}`);
+      }
+      
+    ">+5</button>
+    <button onclick="
+      showQuantity = 0;
+      console.log(`Show Quantity: ${showQuantity}`);
+    ">Reset Cart</button>
+    <button onclick="
+    if(showQuantity<=0){
+      console.log('Not enough items in the cart')
+    }
+    else{
+      showQuantity --;
+      console.log(`Show Quantity: ${showQuantity}`);
+    }
+      
+    ">Remove from cart</button>
+    <button onclick="
+     if(showQuantity<=0){
+      console.log('Not enough items in the cart')
+    }
+      else{
+        showQuantity -= 2;
+      console.log(`Show Quantity: ${showQuantity}`);
+      }
+    ">-2</button>
+    <button onclick="
+     if(showQuantity<=0){
+      console.log('Not enough items in the cart')
+    }
+      else{
+        showQuantity -= 3;
+      console.log(`Show Quantity: ${showQuantity}`);
+      }
+    ">-3</button>
+
+    <script>
+      // let name = 'Khushi';
+      // console.log(`My name is: ${name}`);
+
+      // let cost = 5+2*3+9;
+      // console.log(`Cost of food: ${cost}`);
+      
+      // let tax = cost *0.1;
+      // console.log(`Tax (10%): $${tax}`)
+
+      // let totalCost = cost + tax;
+      // console.log(`Total cost: $${totalCost}`);
+
+      let showQuantity = 0;
+
+
+    </script>
+  </body>
+</html>
