@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DOM</title>
+  </head>
+  <body>
+    <button>9a</button>
+    <button class="button-9b">9b</button><br><br>
+    <button onclick="
+      click();
+    ">heads</button>
+    <button onclick="
+      click();
+    ">tails</button>
+    <p class="result"></p>
+    <script>
+      console.log(document.querySelector('button'));
+      document.querySelector('.button-9b')
+      .innerHTML = '9b done!';
+      
+      function click(){
+        document.querySelector('.result')
+        .innerHTML=`You chose: ${outcome}`;
+      }
+    </script>
+  </body>
+</html>
