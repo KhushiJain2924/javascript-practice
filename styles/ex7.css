@@ -1,0 +1,36 @@
+body{
+  font-family: Arial;
+  margin-bottom: 3000px;
+}
+.subscribe-button,
+.subscribed-button{
+  background-color: black;
+  color: white;
+  border: 1px none;
+  padding: 10px 14px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 50px;
+  margin-bottom: 50px;
+  cursor: pointer;
+}
+.subscribed-button{
+  background-color: lightgray;
+  color: black;
+  font-size: 16px;
+}
+.input-text{
+  padding: 10px 5px;
+  font-size: 16px;
+}
+.calculate-button{
+  background-color: rgb(7, 96, 7);
+  color: white;
+  font-size: 16px;
+  padding: 12px 8px;
+  border: none;
+  cursor: pointer;
+}
+.js-error-text{
+  color: red;
+}

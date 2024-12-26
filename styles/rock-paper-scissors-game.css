@@ -1,0 +1,35 @@
+body{
+  margin-bottom: 3000px;
+  background-color: rgb(25,25,25);
+  color: white;
+  font-family: Arial;
+}
+.title{
+  font-size: 30px;
+  font-weight: bold;
+}
+.move-img{
+ height:50px;
+}
+.move-button{
+  height: 120px;
+  width: 120px;
+  border-radius: 60px;
+  border: 3px solid white;
+  background-color: transparent;
+  margin-right: 10px;
+  margin-bottom: 70px;
+  cursor: pointer;
+}
+.result{
+  font-size: 25px;
+  font-weight: bold;
+}
+.moves{
+  margin-bottom: 50px;
+}
+.result-button{
+  padding: 10px 15px;
+  font-size: 16px;
+  cursor: pointer;
+}

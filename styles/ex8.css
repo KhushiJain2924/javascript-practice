@@ -1,0 +1,15 @@
+body{
+  font-family: Arial;
+}
+.toggle{
+  background-color: lightgray;;
+  border: none;
+  padding: 10px 14px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+.is-toggle{
+  background-color: black;
+  color: white;
+}
