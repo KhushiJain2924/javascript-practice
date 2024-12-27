@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DOM with css</title>
+    <link rel="stylesheet" href="styles/ex7.css">
+  </head>
+  <body>
+    <p>YouTube Subscribe Button</p>
+    <button class="js-subscribe-button subscribe-button" onclick="
+      subscribed();
+    ">Subscribe</button>
+
+    <p>Amazon Shipping Calculator</p>
+    <p>Orders under $40 = +$10 shipping.</p>
+    <p>Orders over $40 = FREE shipping.</p>
+   
+    <input class="js-cost-input input-text" placeholder="Cost of order" onkeydown="handlekey(event)">
+    
+    <button class="js-calculate-button calculate-button" onclick="
+      calculate();
+    "> Calculate</button>
+    
+    <p class="js-cost-text"></p>
+    <p class="js-error-text"></p>
+    <script src="scripts/ex7.js"></script>
+  </body>
+</html>

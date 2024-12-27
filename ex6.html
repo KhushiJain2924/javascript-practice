@@ -3,24 +3,92 @@
   <head>
     <title>DOM</title>
   </head>
-  <body>
+  <body style="margin-bottom: 3000px;">
     <button>9a</button>
-    <button class="button-9b">9b</button><br><br>
+    <button class="button-9b" onclick="
+     ex9b();
+    ">9b</button><br><br> 
+
     <button onclick="
-      click();
+       document.querySelector('.result').innerHTML=`You chose heads`;
     ">heads</button>
     <button onclick="
-      click();
+       document.querySelector('.result').innerHTML=`You chose tails`;
     ">tails</button>
     <p class="result"></p>
+
+    <input class="nameValue" placeholder="Name" onkeyup="eventhandle(event)">
+    <button onclick="
+      getValue();
+    ">Submit</button>
+    <p class="nameText"></p>
+
+    <input class="costValue" placeholder="Enter Cost">
+    <button class="js-button-calculate" onclick="
+      getCost();
+    ">Calculate</button>
+    <p class="jsCostText"></p><br>
+
+    <P>Amazon Shipping Calculator</P>
+    <input placeholder="Cost of order" class="js-cost-input" onkeydown="holdKeyDown(event)">
+    <button onclick="
+      calculate();
+    ">Calculate</button>
+    <p class="js-cost-line"></p><br>
+
+    <input placeholder="Name" class="key-input" onkeyup="
+    let key = document.querySelector('.key-input');
+    document.querySelector('.input-text').innerHTML = key.value;
+    ">
+  <p class="input-text"></p>
+
     <script>
+      //exeercise 9a
       console.log(document.querySelector('button'));
-      document.querySelector('.button-9b')
-      .innerHTML = '9b done!';
       
-      function click(){
-        document.querySelector('.result')
-        .innerHTML=`You chose: ${outcome}`;
+      //exercise 9b
+      function ex9b(){
+        let buttonElement = document.querySelector('.button-9b');
+          if(buttonElement.innerHTML === '9b'){
+            buttonElement.innerHTML = '9b done';
+          }
+          else{
+            buttonElement.innerHTML= '9b';
+          }
+      }
+
+      function eventhandle(event){
+        if(event.key === 'Enter'){
+          getValue();
+        }
+      }
+      function getValue(){
+      let name = document.querySelector('.nameValue');
+      let text = name.value;
+
+      document.querySelector('.nameText').innerHTML=`Your name is: ${text}`;
+      }
+      function getCost(){
+        let cost = document.querySelector('.costValue');
+        let finalCost = cost.value;
+        document.querySelector('.jsCostText').innerHTML = `$${finalCost}`;
+      }
+     
+      //exercise 9g
+      function holdKeyDown(event){
+        if(event.key === 'Enter'){
+          calculate();
+        }
+      }
+      function calculate(){
+        let cost = document.querySelector('.js-cost-input');
+        let costValue = Number(cost.value)*100;
+
+        if(costValue<4000){
+          costValue += 1000;
+        }
+
+        document.querySelector('.js-cost-line').innerHTML = `$${costValue/100}`;
       }
     </script>
   </body>

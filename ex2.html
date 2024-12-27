@@ -9,9 +9,9 @@
     </style>
   </head>
   <body>
-    <p>Cart Quantity</p>
+    
     <button onclick="
-      console.log(`Show Quantity: ${showQuantity}`);
+      cartQuantity();
     ">Show Quantity</button>
     <button onclick="
       if(showQuantity>=10){
@@ -19,7 +19,7 @@
       }
       else{
         showQuantity += 1;
-        console.log(`Show Quantity: ${showQuantity}`);
+       cartQuantity();
       }
     ">Add to Cart</button>
     <button onclick="
@@ -37,7 +37,8 @@
     <button onclick="
       showQuantity = 0;
       alert('The cart was reset');
-      console.log(`Show Quantity: ${showQuantity}`);
+      cartQuantity();
+      localStorage.removeItem('showQuantity');
     ">Reset Cart</button>
     <button onclick="
    updateQuantity(-1);
@@ -49,8 +50,10 @@
     <button onclick="
      updateQuantity(-3);
     ">-3</button>
+    <p class="js-cart-text">Cart Quantity: </p>
 
     <script>
+     
       // let name = 'Khushi';
       // console.log(`My name is: ${name}`);
 
@@ -62,9 +65,16 @@
 
       // let totalCost = cost + tax;
       // console.log(`Total cost: $${totalCost}`);
-
+      function cartQuantity(){
+            document.querySelector('.js-cart-text').innerHTML = `Cart Quantity: ${showQuantity}`;
+          }
       let showQuantity = 0;
-      
+      let savedCart = JSON.parse(localStorage.getItem('showQuantity'));
+      if(savedCart){
+        showQuantity = savedCart;
+      }
+      cartQuantity();
+
       function updateQuantity(value){
         if (showQuantity + value > 10) {
           alert('The cart is full');
@@ -75,7 +85,8 @@
           return;
         }
           showQuantity += value;
-         console.log(`Show Quantity: ${showQuantity}`);
+          cartQuantity();
+          localStorage.setItem('showQuantity', JSON.stringify(showQuantity));
          }
     </script>
   </body>
