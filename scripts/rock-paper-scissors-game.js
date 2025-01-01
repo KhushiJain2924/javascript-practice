@@ -21,6 +21,43 @@ updateScore();
 localStorage.removeItem('score');
 }
 
+let isAutoPlaying = false;
+let intervalID;
+function autoPlay(){
+  if(!isAutoPlaying){
+    intervalID = setInterval(function(){
+      let playerMove = pickMove();
+      playingGame(playerMove);
+    },1000);
+    isAutoPlaying = true;
+  }
+  else{
+    clearInterval(intervalID);
+    isAutoPlaying = false;
+  }
+}
+
+document.querySelector('.js-rock-button').addEventListener('click',()=>{playingGame('rock')});
+
+document.querySelector('.js-paper-button').addEventListener('click',()=>{playingGame('paper')});
+
+document.querySelector('.js-scissors-button').addEventListener('click',()=>{playingGame('scissors')});
+
+document.body.addEventListener('keydown',(event)=>{
+  if(event.key === 'r'){
+    playingGame('rock');
+  }
+  else if(event.key === 'p'){
+    playingGame('paper');
+  }
+  else if(event.key === 's'){
+    playingGame('scissors');
+  }
+  else{
+    document.querySelector('.js-error-text').innerHTML = 'use correct keyword';
+  }
+})
+
 function pickMove(){
   let randomNumber = Math.random();
   let computerMove;

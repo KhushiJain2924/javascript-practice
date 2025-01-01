@@ -28,8 +28,18 @@ body{
 .moves{
   margin-bottom: 50px;
 }
-.result-button{
+.reset-button,
+.auto-play{
   padding: 10px 15px;
   font-size: 16px;
   cursor: pointer;
+}
+.auto-play{
+  margin-left:10px ;
+}
+.error-text{
+  color: yellow;
+  font-size: 18px;
+  display: inline-block;
+  padding: 10px;
 }

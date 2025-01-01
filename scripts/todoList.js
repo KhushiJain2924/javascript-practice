@@ -2,24 +2,34 @@ const todoList = JSON.parse(localStorage.getItem('todoList')) || [];
 
 function renderList(){
   let todoListHTML = '';
-for(let i=0;i<todoList.length;i++){
-  let todoObj = todoList[i];
-  //let {name,date} = todoObj;
-  let name = todoObj.name;
-  let date = todoObj.date;
-  const html = `
-  <div class="name-text">${name}</div>
-  <div class="date-text">${date}</div>
-  <button class="delete-button" onclick="
-    todoList.splice(${i},1);
+  todoList.forEach(function(todoObj, index){
+    let name = todoObj.name;
+    let date = todoObj.date;
+    const html = `
+    <div class="name-text">${name}</div>
+    <div class="date-text">${date}</div>
+    <button class="delete-button js-delete-button">Delete</button>
+    `;
+    todoListHTML += html;
+  })
+document.querySelector('.js-input-text').innerHTML = todoListHTML;
+
+document.querySelectorAll('.js-delete-button')
+.forEach((deleteButton,index)=>{
+  deleteButton.addEventListener('click',()=>{
+    todoList.splice(index,1);
     renderList();
     localStorage.removeItem('todoList');
-  ">Delete</button>
-  `;
-  todoListHTML += html;
+  });
+});
 }
-document.querySelector('.js-input-text').innerHTML = todoListHTML;
-}
+
+document.querySelector('.js-add-button').addEventListener('click',()=>{
+  myList();
+})
+
+
+
 
 function myList(){
   let inputElement = document.querySelector('.js-input-value');
